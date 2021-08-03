@@ -14,6 +14,7 @@ defmodule Swym.Application do
       # SwymWeb.Endpoint
       # Starts a worker by calling: Swym.Worker.start_link(arg)
       # {Swym.Worker, arg},
+      Swym.TweetStore
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

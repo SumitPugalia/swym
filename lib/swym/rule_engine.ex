@@ -17,19 +17,19 @@ defmodule Swym.RuleEngine do
 
     defp location_rule(%Tweet{location: location} = tweet, value, condition, action) do
         if apply_condition?(condition, location, value) do
-            apply(Actions, action, [tweet])
+            apply(Actions, action, [tweet, :location])
         end
     end
     
     defp tweets_rule(%Tweet{user_name: user_name} = tweet, value, condition, action) do
         if apply_condition?(condition, count_tweets_for_user(user_name), value) do
-            apply(Actions, action, [tweet])
+            apply(Actions, action, [tweet, :tweets])
         end
     end
 
     defp user_name_initial_letter_rule(%Tweet{user_name: user_name} = tweet, value, condition, action) do
         if apply_condition?(condition, String.at(user_name, 0), value) do
-            apply(Actions, action, [tweet])
+            apply(Actions, action, [tweet, :user_name_initial_letter])
         end
     end
 
@@ -40,7 +40,7 @@ defmodule Swym.RuleEngine do
         end
     end
 
-    defp count_tweets_for_user(_user_name) do
-        Enum.random(8..12)
+    defp count_tweets_for_user(user_name) do
+        Swym.TweetStore.count(user_name)
     end
 end
