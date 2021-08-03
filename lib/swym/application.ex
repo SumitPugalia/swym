@@ -9,9 +9,9 @@ defmodule Swym.Application do
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository
-      Swym.Repo,
+      # Swym.Repo,
       # Start the endpoint when the application starts
-      SwymWeb.Endpoint
+      # SwymWeb.Endpoint
       # Starts a worker by calling: Swym.Worker.start_link(arg)
       # {Swym.Worker, arg},
     ]

@@ -1,19 +1,17 @@
 # Swym
 
-To start your Phoenix server:
+# Install Elixir
+- https://elixir-lang.org/install.html
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server`
+# Steps
+- git clone 
+# Solution
+- I have approached the solutio using RuleEngine.
+Rules are created Dynamically from Dashboard based on Attributes, Conditions and Actions. 
+[For simplicity I didn't create any dashboard capability but the idea is to have json as in Swym.Rules but in a persistant DB.]
+- Each Attribute is a property that can be inferred from input map.
+- Condition is to verfiy if we meet the expectation to trigger Actions.
+- Actions are the function responsible to perform the required task.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+The solution is designed to be scalable and extensible.
+Note: I didn't use any DB.
