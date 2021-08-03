@@ -9,28 +9,31 @@
 - iex -S mix phx.server [to start the console]
 
 - Create input:
- - tweet1 = %Swym.Tweet{
+ - `tweet1 = %Swym.Tweet{
               hashtag: nil,
               location: "UCS",
               msg: "Hi Aumit, this is me",
               user_name: "AumitPacks"
-            }
- - tweet2 = %Swym.Tweet{
+            }`
+ - `tweet2 = %Swym.Tweet{
               hashtag: nil,
               location: "US",
               msg: "Hi Sumit, this is me",
               user_name: "SumitPacks"
-            }
- - tweet3 = %Swym.Tweet{
+            }`
+ - `tweet3 = %Swym.Tweet{
               hashtag: nil,
               location: "U",
               msg: "Hi, this is you",
               user_name: "PK"
-            }
+            }`
 
-- Create Stream calls:
+- Create a single tweet:
+ `Swym.Tweet.receive(tweet1)`
 
-[tweet1, tweet2, tweet3] |> Stream.cycle() |> Enum.take(10) |> Enum.each(fn v -> Swym.Tweet.receive(v) end)
+- Create Stream of tweets:
+
+`[tweet1, tweet2, tweet3] |> Stream.cycle() |> Enum.take(10) |> Enum.each(fn v -> Swym.Tweet.receive(v) end)`
 
 This will fire 10 tweets tweet1, tweet2, tweet3, tweet1 and so on...
 
