@@ -37,8 +37,8 @@ This will fire 10 tweets tweet1, tweet2, tweet3, tweet1 and so on...
 - Will see some output based on rules and actions.
 
 # Solution
-- I have approached the solutio using RuleEngine.
-Rules are created Dynamically from Dashboard based on Attributes, Conditions and Actions. 
+- I have approached the solution using RuleEngine and tried to keep it simple enough.
+Rules are to be created Dynamically from Dashboard based on Attributes, Conditions and Actions. 
 [For simplicity I didn't create any dashboard capability but the idea is to have json as in Swym.Rules but in a persistant DB.]
 - Each Attribute is a property that can be inferred from input map.
 - Condition is to verfiy if we meet the expectation to trigger Actions.
